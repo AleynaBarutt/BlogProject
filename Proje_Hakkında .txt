@@ -1,0 +1,3 @@
+Bir çok farklı kategoride içeriklerin bulunacağı kullanıcıların yorum yapabildiği, içerik 
+hakkında geri dönüşlerini bildirebildiği,puanlama yapabileceği, üyelerin de güncelleme ve
+içerik ekleyebildiği bir blog web sitesi tasarladım.
