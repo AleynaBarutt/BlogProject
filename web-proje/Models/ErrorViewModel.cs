@@ -9,4 +9,6 @@ namespace web_proje.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 
+   
+
 }

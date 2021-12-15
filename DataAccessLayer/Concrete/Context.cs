@@ -26,7 +26,7 @@ namespace DataAccessLayer.Concrete
 
         public DbSet<Comment> Comments { get; set; }
 
-        public DbSet<Contact> Contact { get; set; }
+        public DbSet<Contacts> Contacts { get; set; }
 
         public DbSet<Writer> Writers { get; set; }
 
