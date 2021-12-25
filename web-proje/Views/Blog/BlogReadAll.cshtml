@@ -4,12 +4,6 @@
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
-<!--
-    Author: W3layouts
-    Author URL: http://w3layouts.com
-    License: Creative Commons Attribution 3.0 Unported
-    License URL: http://creativecommons.org/licenses/by/3.0/
--->
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -41,17 +35,7 @@
                                                 <i class="far fa-calendar-alt"></i>@(((DateTime)item.BlogCreateDate).ToString("dd-MMM-yyyy"))
                                             </a>
                                         </li>
-                                        <li class="mx-2">
-                                            <a href="#">
-                                                <i class="far fa-thumbs-up"></i>0 Beğeni
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="far fa-comment"></i> 0 Yorum
-                                            </a>
-                                        </li>
-
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -62,7 +46,7 @@
                             <p>
                                 @item.BlogContent
                             </p>
-                            <a href="/Blog/Index/" class="btn btn-primary read-m">Blog Listesi</a>
+                            <a href="/Blog/Index/" class="btn btn-primary read-m" style="background-color:plum">Blog Listesi</a>
                         </div>
                     }
 
@@ -79,57 +63,22 @@
                 <!--right-->
                 <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
                     <div class="right-blog-info text-left">
+
+                        @await Component.InvokeAsync("CategoryList")
+                        <br />
+                        <br />
+                        <br />
                         <div class="tech-btm">
                             <img src="~/BlogTema/images/4.jpg" class="img-fluid" alt="">
                         </div>
 
-                        <h4>Mail Bültenine Abone Olun</h4>
+                        <h4>Maille Bize Ulaşın</h4>
                         @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
-
-                        @await Component.InvokeAsync("CategoryList")
-
+                        <br />
+                        <br />
+                        <br />
                         @await Component.InvokeAsync("WriterLastBlog")
 
-                        <div class="single-gd my-5 tech-btm">
-                            <h4>Our Progress</h4>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0"
-                                     aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                                     aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                     aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                     aria-valuemax="100"></div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-                                     aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="single-gd tech-btm">
-                            <h4>Eklenen Son Post</h4>
-                            <div class="blog-grids">
-                                <div class="blog-grid-left">
-                                    <a href="single.html">
-                                        <img src="~/BlogTema/images/b2.jpg" class="img-fluid" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-grid-right">
-
-                                    <h5>
-                                        <a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
-                                    </h5>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                        </div>
                     </div>
 
                 </aside>

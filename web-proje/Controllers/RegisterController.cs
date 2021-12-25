@@ -31,7 +31,7 @@ namespace web_proje.Controllers
                 p.WriterStatus = true;
                 p.WriterAbout = "deneme";
                 wm.TAdd(p);
-                return RedirectToAction("Index", "Blog");
+                return RedirectToAction("Index", "Login");
             }
             else
             {

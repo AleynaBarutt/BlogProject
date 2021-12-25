@@ -8,7 +8,7 @@
 
 <section class="main-content-w3layouts-agileits">
     <div class="container">
-        <h3 class="tittle">Bloglar</h3>
+        
         <div class="row inner-sec">
             <!--left-->
             <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
@@ -16,24 +16,20 @@
                     @foreach (var item in Model)
                     {
                     <div class="col-md-6 card">
-                        <a href="single.html">
+                        <a href="/Blog/BlogReadAll/@item.BlogID/">
                             <img src="@item.BlogImage" class="card-img-top img-fluid" alt="">
                         </a>
                         <div class="card-body">
                             <ul class="blog-icons my-4">
                                 <li>
                                     <a href="#">
-                                        <i class="far fa-calendar-alt"></i> @(((DateTime)item.BlogCreateDate).ToString("dd-MMM-yyyy"))
+                                        <i class="far fa-calendar-alt" style="color:rebeccapurple"></i> @(((DateTime)item.BlogCreateDate).ToString("dd-MMM-yyyy"))
                                     </a>
                                 </li>
-                                <li class="mx-2">
-                                    <a href="#">
-                                        <i class="far fa-comment"></i> 0
-                                    </a>
-                                </li>
+                               
                                 <li>
                                     <a href="#">
-                                        <i class="fas fa-eye"></i> @item.Category.CategoryName
+                                        <i class="fas fa-eye" style="color:rebeccapurple"></i> @item.Category.CategoryName
                                     </a>
                                 </li>
 
@@ -41,8 +37,8 @@
                             <h5 class="card-title ">
                                 <a href="/Blog/BlogReadAll/@item.BlogID/">@item.BlogTitle</a>
                             </h5>
-                            <p class="card-text mb-3">@item.BlogContent.Substring(0,item.BlogContent.Substring(0,50).LastIndexOf(" "))... </p>
-                            <a href="/Blog/BlogReadAll/@item.BlogID/" class="btn btn-primary read-m">Devamını Oku</a>
+                            <p class="card-text mb-3">@item.BlogContent.Substring(0,item.BlogContent.Substring(0,150).LastIndexOf(" "))... </p>
+                            <a href="/Blog/BlogReadAll/@item.BlogID/" class="btn btn-secondary read-m" style="color:white">Devamını Oku</a>
                         </div>
                     </div>
                     }
@@ -54,195 +50,25 @@
             <!--right-->
             <aside class="col-lg-4 agileits-w3ls-right-blog-con text-left">
                 <div class="right-blog-info text-left">
-                    <div class="tech-btm">
-                        <img src="~/BlogTema/images/b2.jpg" class="card-img-top img-fluid" alt="">
-                    </div>
-                    <div class="tech-btm">
-                        <h4>Sign up to our newsletter</h4>
-                        <p>Pellentesque dui, non felis. Maecenas male </p>
-                        <form action="#" method="post">
-                            <input type="email" placeholder="Email" required="">
-                            <input type="submit" value="Subscribe">
-                        </form>
 
-                    </div>
                     @await Component.InvokeAsync("CategoryList")
+
+                    <br />
+                    <br />
+                    <br />
+
                     <div class="tech-btm">
-                        <h4>Yazarın diğer yazıları</h4>
-
-                        <div class="blog-grids row mb-3">
-                            <div class="col-md-5 blog-grid-left">
-                                <a href="single.html">
-                                    <img src="~/BlogTema/images/1.jpg" class="card-img-top img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7 blog-grid-right">
-
-                                <h5>
-                                    <a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                </h5>
-                                <div class="sub-meta">
-                                    <span>
-                                        <i class="far fa-clock"></i> 20 Jan, 2018
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="blog-grids row mb-3">
-                            <div class="col-md-5 blog-grid-left">
-                                <a href="single.html">
-                                    <img src="~/BlogTema/images/1.jpg" class="card-img-top img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7 blog-grid-right">
-                                <h5>
-                                    <a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                </h5>
-                                <div class="sub-meta">
-                                    <span>
-                                        <i class="far fa-clock"></i> 20 Feb, 2018
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="single-gd my-5 tech-btm">
-                        <h4>Our Progress</h4>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="single-gd tech-btm text-left">
-                        <h4>Eklenen son post</h4>
-                        <div class="blog-grids">
-                            <div class="blog-grid-left">
-                                <a href="single.html">
-                                    <img src="~/BlogTema/images/b1.jpg" class="card-img-top img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="blog-grid-right">
-
-                                <h5>
-                                    <a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
-                                </h5>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
+                        <img src="~/BlogTema/images/4.jpg" class="card-img-top img-fluid" alt="">
                     </div>
 
+                    <h4>Maille Bize Ulaşın</h4>
+                    @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
+                    <br />
+                    <br />
+                    <br />
 
+                    @await Html.PartialAsync("~/Views/About/SocialMediaAbout.cshtml")
 
-                    <div class="tech-btm widget_social text-left">
-                        <h4>Stay Connect</h4>
-                        <ul>
-
-                            <li>
-                                <a class="twitter" href="#">
-                                    <i class="fab fa-twitter"></i>
-                                    <span class="count">317K</span> Twitter Followers
-                                </a>
-                            </li>
-                            <li>
-                                <a class="facebook" href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                    <span class="count">218k</span> Twitter Followers
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dribble" href="#">
-                                    <i class="fab fa-dribbble"></i>
-
-                                    <span class="count">215k</span> Dribble Followers
-                                </a>
-                            </li>
-                            <li>
-                                <a class="pin" href="#">
-                                    <i class="fab fa-pinterest"></i>
-                                    <span class="count">190k</span> Pinterest Followers
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="tech-btm">
-                        <h4>Recent Posts</h4>
-
-                        <div class="blog-grids row mb-3 text-left">
-                            <div class="col-md-5 blog-grid-left">
-                                <a href="single.html">
-                                    <img src="images/1.jpg" class="card-img-top img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7 blog-grid-right">
-
-                                <h5>
-                                    <a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                </h5>
-                                <div class="sub-meta">
-                                    <span>
-                                        <i class="far fa-clock"></i> 20 Jan, 2018
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="blog-grids row mb-3 text-left">
-                            <div class="col-md-5 blog-grid-left">
-                                <a href="single.html">
-                                    <img src="images/5.jpg" class="card-img-top img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7 blog-grid-right">
-
-                                <h5>
-                                    <a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                </h5>
-                                <div class="sub-meta">
-                                    <span>
-                                        <i class="far fa-clock"></i> 20 Jan, 2018
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="blog-grids row mb-3 text-left">
-                            <div class="col-md-5 blog-grid-left">
-                                <a href="single.html">
-                                    <img src="images/3.jpg" class="card-img-top img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7 blog-grid-right">
-                                <h5>
-                                    <a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                </h5>
-                                <div class="sub-meta">
-                                    <span>
-                                        <i class="far fa-clock"></i> 20 Feb, 2018
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
             </aside>
             <!--//right-->

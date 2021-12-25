@@ -17,26 +17,25 @@
     <!--/main-->
     <section class="main-content-w3layouts-agileits">
         <div class="container">
-            <h3 class="tittle">Hakkımızda</h3>
+            <h3 class="tittle">Biz Kimiz?</h3>
             <div class="row inner-sec">
                 <!--left-->
                 <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
                     <div class="blog-grid-top">
+                        @foreach (var item in Model)
+                        {
+                            <div class="blog_info_left_grid">
+                                <a href="single.html">
+                                    <img src="@item.AboutImage1" class="img-fluid" width="700" alt="">
+                                </a>
+                            </div>
+                            <br /> <br />
 
-                        <div class="blog_info_left_grid">
-                            <a href="single.html">
-                                <img src="~/BlogTema/images/b5.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <h3>
-                           Misyonumuz & Vizyonumuz
-                        </h3>
-                        @foreach (var item in Model) {
-                        <p>
-                            @item.AboutDetails1
-                        </p>
+                            <p>
+                                @item.AboutDetails1
+                            </p>
                         }
-                        <a href="single.html" class="btn btn-primary read-m">Read More</a>
+
                     </div>
                     
                 </div>
@@ -47,15 +46,14 @@
                         <div class="tech-btm">
                             <img src="~/BlogTema/images/banner1.jpg" class="img-fluid" alt="">
                         </div>
+                        <h4>Maille Bize Ulaşın</h4>
                         @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
+                        <br />
+                        <br />
+                        <br />
                         @await Html.PartialAsync("~/Views/About/SocialMediaAbout.cshtml")
 
-                       
-                    <div class="tech-btm">
-                        <h4>Son Postlar</h4>
 
-                        @await Component.InvokeAsync("WriterLastBlog")
-                    </div>
                     </div>
 
                 </aside>
