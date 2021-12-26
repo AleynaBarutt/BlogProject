@@ -45,6 +45,13 @@ namespace web_proje.Controllers
             return View(values);
         }
 
+        public IActionResult BlogListByAdmin()
+        {
+            var values = bm.GetBlogListWithCategory();
+            return View(values);
+
+        }
+
         [HttpGet]
         public IActionResult BlogAdd()
         {

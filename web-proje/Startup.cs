@@ -43,7 +43,7 @@ namespace web_proje
                 CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(x =>
                 {
-                    x.LoginPath = "/Loginn/Index";
+                    x.LoginPath = "/Login/Index";
                 }
              );
         }
@@ -78,7 +78,7 @@ namespace web_proje
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Blog}/{action=Index}/{id?}");
             });
         }
     }
