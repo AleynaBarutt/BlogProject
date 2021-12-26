@@ -27,7 +27,7 @@ namespace web_proje.Controllers
             var datavalue = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail &&
             x.WriterPassword == p.WriterPassword);
 
-            if (datavalue != null)
+            if (datavalue != null && datavalue.IsAdmin)
             {
                 var claims = new List<Claim>
                 {
